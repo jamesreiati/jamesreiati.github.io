@@ -1,8 +1,31 @@
 ---
-layout: default
+layout: compress
 ---
+<!doctype html>
+<html lang="en">
 
-<article class="page">
-  <h1 class="page-title">{{ page.title | smartify }}</h1>
-  {{ content | smartify }}
-</article>
+  <head>
+
+    {% include metaheadercommon.html %}
+  
+    {% seo title=false %}
+    
+  </head>
+
+  <body>
+    <div class="container content">
+
+      {% include siteheader.html %}
+
+      <main>
+        <article class="page">
+          <h1 class="page-title">{{ page.title | smartify }}</h1>
+          {{ content | smartify }}
+        </article>
+      </main>
+
+      {% include footer.html %}
+
+    </div>
+  </body>
+</html>
